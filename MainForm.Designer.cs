@@ -33,12 +33,14 @@
             productsToolStripMenuItem = new ToolStripMenuItem();
             billToolStripMenuItem = new ToolStripMenuItem();
             newBillToolStripMenuItem = new ToolStripMenuItem();
+            viewToolStripMenuItem = new ToolStripMenuItem();
+            billToolStripMenuItem1 = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { dataToolStripMenuItem, billToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { dataToolStripMenuItem, billToolStripMenuItem, viewToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(532, 24);
@@ -55,7 +57,7 @@
             // productsToolStripMenuItem
             // 
             productsToolStripMenuItem.Name = "productsToolStripMenuItem";
-            productsToolStripMenuItem.Size = new Size(180, 22);
+            productsToolStripMenuItem.Size = new Size(121, 22);
             productsToolStripMenuItem.Text = "Products";
             productsToolStripMenuItem.Click += productsToolStripMenuItem_Click_1;
             // 
@@ -72,6 +74,20 @@
             newBillToolStripMenuItem.Size = new Size(180, 22);
             newBillToolStripMenuItem.Text = "New Bill";
             newBillToolStripMenuItem.Click += newBillToolStripMenuItem_Click;
+            // 
+            // viewToolStripMenuItem
+            // 
+            viewToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { billToolStripMenuItem1 });
+            viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            viewToolStripMenuItem.Size = new Size(44, 20);
+            viewToolStripMenuItem.Text = "View";
+            // 
+            // billToolStripMenuItem1
+            // 
+            billToolStripMenuItem1.Name = "billToolStripMenuItem1";
+            billToolStripMenuItem1.Size = new Size(180, 22);
+            billToolStripMenuItem1.Text = "Bill";
+            billToolStripMenuItem1.Click += billToolStripMenuItem1_Click;
             // 
             // MainForm
             // 
@@ -99,5 +115,7 @@
         private ToolStripMenuItem productsToolStripMenuItem;
         private ToolStripMenuItem billToolStripMenuItem;
         private ToolStripMenuItem newBillToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem billToolStripMenuItem1;
     }
 }

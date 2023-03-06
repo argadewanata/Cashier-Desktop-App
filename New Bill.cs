@@ -126,6 +126,7 @@ namespace Cashier_Dekstop_App
 
                     cmd_row.ExecuteNonQuery();
                 }
+                dataGridView1.Rows.Clear();
 
                 MessageBox.Show("New Bill Saved");
                 myconn.Close();

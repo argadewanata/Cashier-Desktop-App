@@ -35,8 +35,14 @@ namespace Cashier_Dekstop_App
             }
             else
             {
-                MessageBox.Show("Username Not Found");
+                MessageBox.Show("Invalid Account Name and Password");
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            this.txtbox_Username.Text = "admin";
+            this.txtbox_Password.Text = "admin";
         }
     }
 }

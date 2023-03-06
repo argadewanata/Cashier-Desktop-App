@@ -35,5 +35,12 @@ namespace Cashier_Dekstop_App
             nb.MdiParent = this;
             nb.Show();
         }
+
+        private void billToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ViewBill view_bill = new ViewBill();
+            view_bill.MdiParent = this;
+            view_bill.Show();
+        }
     }
 }
