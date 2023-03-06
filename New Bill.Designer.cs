@@ -199,6 +199,7 @@
             // 
             // txtbox_ProQty
             // 
+            txtbox_ProQty.AcceptsTab = true;
             txtbox_ProQty.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtbox_ProQty.Location = new Point(247, 28);
             txtbox_ProQty.Name = "txtbox_ProQty";
@@ -208,14 +209,17 @@
             // 
             // txtbox_ProAmount
             // 
+            txtbox_ProAmount.AcceptsTab = true;
             txtbox_ProAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtbox_ProAmount.Location = new Point(349, 28);
             txtbox_ProAmount.Name = "txtbox_ProAmount";
+            txtbox_ProAmount.ReadOnly = true;
             txtbox_ProAmount.Size = new Size(84, 23);
             txtbox_ProAmount.TabIndex = 6;
             // 
             // txtBox_ProPrice
             // 
+            txtBox_ProPrice.AcceptsTab = true;
             txtBox_ProPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtBox_ProPrice.Location = new Point(135, 28);
             txtBox_ProPrice.Name = "txtBox_ProPrice";
@@ -360,6 +364,7 @@
             txtbox_TotalBill.ReadOnly = true;
             txtbox_TotalBill.Size = new Size(100, 23);
             txtbox_TotalBill.TabIndex = 10;
+            txtbox_TotalBill.TextChanged += txtbox_TotalBill_TextChanged;
             // 
             // txtbox_Discount
             // 
@@ -368,6 +373,7 @@
             txtbox_Discount.Name = "txtbox_Discount";
             txtbox_Discount.Size = new Size(100, 23);
             txtbox_Discount.TabIndex = 11;
+            txtbox_Discount.Leave += txtbox_Discount_Leave;
             // 
             // txtbox_NetPay
             // 

@@ -15,6 +15,8 @@ namespace Cashier_Dekstop_App
     public partial class New_Bill : Form
     {
         private SqlCommand cmd;
+        private SqlCommand cmd_header;
+        private SqlCommand cmd_row;
         private SqlDataAdapter da;
         private DataTable dt;
         private SqlDataReader dr;
@@ -29,6 +31,7 @@ namespace Cashier_Dekstop_App
 
         private void New_Bill_Load(object sender, EventArgs e)
         {
+            comboBox1.Select();
             comboBox1.Items.Clear(); // Clear combo box before load form
 
             SqlConnection myconn = sql_Connection.GetConn();
@@ -72,7 +75,68 @@ namespace Cashier_Dekstop_App
 
         private void btn_Save_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.Rows.Count < 1)
+            {
+                MessageBox.Show("Please add the product");
+            }
+            else
+            {
+                //save header data
+                SqlConnection myconn = sql_Connection.GetConn();
+                myconn.Open();
 
+                string BillNo = txtBox_BillNo.Text;
+                string BillDate = dateTimePicker1.Value.ToString("dd-MM-yyyy");
+                string BillAmount = txtbox_TotalBill.Text;
+                string DiscAmount = txtbox_Discount.Text;
+                string NetPay = txtbox_NetPay.Text;
+                string header_query = "INSERT INTO TBL_HeaderData VALUES(@BillNo,@BillDate,@BillAmount,@DiscAmount,@NetPay)";
+
+                cmd_header = new SqlCommand(header_query, myconn);
+                cmd_header.Parameters.AddWithValue("@BillNo", BillNo);
+                cmd_header.Parameters.AddWithValue("@BillDate", BillDate);
+                cmd_header.Parameters.AddWithValue("@BillAmount", BillAmount);
+                cmd_header.Parameters.AddWithValue("@DiscAmount", DiscAmount);
+                cmd_header.Parameters.AddWithValue("@NetPay", NetPay);
+
+                cmd_header.ExecuteNonQuery();
+
+                // Save Row Data
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    string SINo = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    string ProductName = dataGridView1.Rows[i].Cells[1].Value.ToString();
+                    string Price = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                    string Qty = dataGridView1.Rows[i].Cells[3].Value.ToString();
+                    string Amount = dataGridView1.Rows[i].Cells[4].Value.ToString();
+                    string BillNO = dataGridView1.Rows[i].Cells[5].Value.ToString();
+                    string Date = dataGridView1.Rows[i].Cells[6].Value.ToString();
+                    string row_query = "INSERT INTO TBL_RowData(SINo,ProductName,Price,Qty,Amount,BillNo,Date) VALUES(@SINo,@ProductName,@Price,@Qty,@Amount,@BillNO,@Date)";
+
+                    cmd_row = new SqlCommand(row_query, myconn);
+                    cmd_row.Parameters.AddWithValue("@SINo", SINo);
+                    cmd_row.Parameters.AddWithValue("@ProductName", ProductName);
+                    cmd_row.Parameters.AddWithValue("@Price", Price);
+                    cmd_row.Parameters.AddWithValue("@Qty", Qty);
+                    cmd_row.Parameters.AddWithValue("@Amount", Amount);
+                    cmd_row.Parameters.AddWithValue("@BillNO", BillNO);
+                    cmd_row.Parameters.AddWithValue("@Date", Date);
+
+                    //SqlCommand cmd1 = new SqlCommand("INSERT INTO TBL_RowData(SINo,ProductName,Price,Qty,Amount,BillNo) VALUES('"+dataGridView1.Rows[i].Cells[0].ToString()+ "','"+dataGridView1.Rows[i].Cells[1].ToString()+ "','"+dataGridView1.Rows[i].Cells[2].ToString()+ "','"+dataGridView1.Rows[i].Cells[3].ToString()+ "','"+dataGridView1.Rows[i].Cells[4].ToString()+ "','"+dataGridView1.Rows[i].Cells[5].Value.ToString()+"')", myconn);
+
+                    cmd_row.ExecuteNonQuery();
+                }
+
+                MessageBox.Show("New Bill Saved");
+                myconn.Close();
+
+                loadBillNo();
+                clearTextBox();
+                clearPayBox();
+
+                comboBox1.Select();
+
+            }
         }
 
         public void loadBillNo()
@@ -192,6 +256,13 @@ namespace Cashier_Dekstop_App
             txtBox_DeleUpdate.Text = "";
         }
 
+        private void clearPayBox()
+        {
+            txtbox_TotalBill.Text = "";
+            txtbox_Discount.Text = "";
+            txtbox_NetPay.Text = "";
+        }
+
         private void CalcAmount()
         {
             double a1, b1, i;
@@ -213,6 +284,18 @@ namespace Cashier_Dekstop_App
             }
 
             txtbox_TotalBill.Text = sum.ToString();
+        }
+
+        private void calcDisc()
+        {
+            double a2, b2, i;
+            double.TryParse(txtbox_TotalBill.Text, out a2);
+            double.TryParse(txtbox_Discount.Text, out b2);
+            i = a2 - b2; //Bill amount - disc amount
+            if (i > 0)
+            {
+                txtbox_NetPay.Text = i.ToString("C").Remove(0, 1);
+            }
         }
 
         private void btn_Delete_Click(object sender, EventArgs e)
@@ -246,6 +329,16 @@ namespace Cashier_Dekstop_App
         private void txtBox_ProPrice_Leave(object sender, EventArgs e)
         {
             CalcAmount();
+        }
+
+        private void txtbox_TotalBill_TextChanged(object sender, EventArgs e)
+        {
+            calcDisc();
+        }
+
+        private void txtbox_Discount_Leave(object sender, EventArgs e)
+        {
+            calcDisc();
         }
     }
 }
