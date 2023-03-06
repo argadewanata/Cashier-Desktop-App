@@ -66,14 +66,14 @@
             txtbox_Username.Location = new Point(101, 67);
             txtbox_Username.Name = "txtbox_Username";
             txtbox_Username.Size = new Size(119, 23);
-            txtbox_Username.TabIndex = 4;
+            txtbox_Username.TabIndex = 0;
             // 
             // txtbox_Password
             // 
             txtbox_Password.Location = new Point(101, 122);
             txtbox_Password.Name = "txtbox_Password";
             txtbox_Password.Size = new Size(119, 23);
-            txtbox_Password.TabIndex = 5;
+            txtbox_Password.TabIndex = 1;
             txtbox_Password.UseSystemPasswordChar = true;
             // 
             // btn_Login
@@ -81,7 +81,7 @@
             btn_Login.Location = new Point(119, 166);
             btn_Login.Name = "btn_Login";
             btn_Login.Size = new Size(75, 23);
-            btn_Login.TabIndex = 6;
+            btn_Login.TabIndex = 2;
             btn_Login.Text = "Login";
             btn_Login.UseVisualStyleBackColor = true;
             btn_Login.Click += btn_Login_Click;

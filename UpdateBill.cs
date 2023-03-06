@@ -316,5 +316,19 @@ namespace Cashier_Dekstop_App
             txtbox_NetPay.Text = "";
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection myconn = sql_Connection.GetConn();
+            myconn.Open();
+
+            cmd = new SqlCommand("SELECT * FROM TBL_Products WHERE ProName = '" + comboBox1.Text + "' ", myconn);
+            dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                txtBox_ProPrice.Text = dr[2].ToString();
+            }
+
+            myconn.Close();
+        }
     }
 }

@@ -83,7 +83,7 @@
             lbl_Date.Location = new Point(551, 12);
             lbl_Date.Name = "lbl_Date";
             lbl_Date.Size = new Size(31, 15);
-            lbl_Date.TabIndex = 1;
+            lbl_Date.TabIndex = 0;
             lbl_Date.Text = "Date";
             // 
             // dateTimePicker1
@@ -93,7 +93,7 @@
             dateTimePicker1.Location = new Point(588, 6);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(96, 23);
-            dateTimePicker1.TabIndex = 2;
+            dateTimePicker1.TabIndex = 1;
             // 
             // txtBox_BillNo
             // 
@@ -101,7 +101,7 @@
             txtBox_BillNo.Name = "txtBox_BillNo";
             txtBox_BillNo.ReadOnly = true;
             txtBox_BillNo.Size = new Size(100, 23);
-            txtBox_BillNo.TabIndex = 3;
+            txtBox_BillNo.TabIndex = 1;
             txtBox_BillNo.TextChanged += txtBox_BillNo_TextChanged;
             // 
             // panel1
@@ -204,7 +204,7 @@
             txtbox_ProQty.Location = new Point(247, 28);
             txtbox_ProQty.Name = "txtbox_ProQty";
             txtbox_ProQty.Size = new Size(82, 23);
-            txtbox_ProQty.TabIndex = 7;
+            txtbox_ProQty.TabIndex = 2;
             txtbox_ProQty.Leave += txtbox_ProQty_Leave;
             // 
             // txtbox_ProAmount
@@ -215,7 +215,7 @@
             txtbox_ProAmount.Name = "txtbox_ProAmount";
             txtbox_ProAmount.ReadOnly = true;
             txtbox_ProAmount.Size = new Size(84, 23);
-            txtbox_ProAmount.TabIndex = 6;
+            txtbox_ProAmount.TabIndex = 3;
             // 
             // txtBox_ProPrice
             // 
@@ -223,8 +223,9 @@
             txtBox_ProPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtBox_ProPrice.Location = new Point(135, 28);
             txtBox_ProPrice.Name = "txtBox_ProPrice";
+            txtBox_ProPrice.ReadOnly = true;
             txtBox_ProPrice.Size = new Size(100, 23);
-            txtBox_ProPrice.TabIndex = 5;
+            txtBox_ProPrice.TabIndex = 1;
             txtBox_ProPrice.Leave += txtBox_ProPrice_Leave;
             // 
             // comboBox1
@@ -234,7 +235,8 @@
             comboBox1.Location = new Point(3, 28);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 4;
+            comboBox1.TabIndex = 0;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btn_Add
             // 
@@ -242,7 +244,7 @@
             btn_Add.Location = new Point(454, 28);
             btn_Add.Name = "btn_Add";
             btn_Add.Size = new Size(53, 20);
-            btn_Add.TabIndex = 8;
+            btn_Add.TabIndex = 4;
             btn_Add.Text = "Add";
             btn_Add.UseVisualStyleBackColor = true;
             btn_Add.Click += btn_Add_Click;
@@ -253,7 +255,7 @@
             btn_Delete.Location = new Point(513, 28);
             btn_Delete.Name = "btn_Delete";
             btn_Delete.Size = new Size(60, 20);
-            btn_Delete.TabIndex = 9;
+            btn_Delete.TabIndex = 5;
             btn_Delete.Text = "Delete";
             btn_Delete.UseVisualStyleBackColor = true;
             btn_Delete.Click += btn_Delete_Click;
@@ -264,7 +266,7 @@
             bnt_Clear.Location = new Point(579, 28);
             bnt_Clear.Name = "bnt_Clear";
             bnt_Clear.Size = new Size(60, 20);
-            bnt_Clear.TabIndex = 10;
+            bnt_Clear.TabIndex = 6;
             bnt_Clear.Text = "Clear";
             bnt_Clear.UseVisualStyleBackColor = true;
             // 
@@ -273,7 +275,7 @@
             txtBox_DeleUpdate.Location = new Point(645, 28);
             txtBox_DeleUpdate.Name = "txtBox_DeleUpdate";
             txtBox_DeleUpdate.Size = new Size(43, 23);
-            txtBox_DeleUpdate.TabIndex = 11;
+            txtBox_DeleUpdate.TabIndex = 7;
             // 
             // dataGridView1
             // 
@@ -372,7 +374,7 @@
             txtbox_Discount.Location = new Point(119, 350);
             txtbox_Discount.Name = "txtbox_Discount";
             txtbox_Discount.Size = new Size(100, 23);
-            txtbox_Discount.TabIndex = 11;
+            txtbox_Discount.TabIndex = 0;
             txtbox_Discount.Leave += txtbox_Discount_Leave;
             // 
             // txtbox_NetPay
@@ -390,7 +392,7 @@
             btn_Save.Location = new Point(612, 382);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(75, 23);
-            btn_Save.TabIndex = 13;
+            btn_Save.TabIndex = 1;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = true;
             btn_Save.Click += btn_Save_Click;

@@ -60,11 +60,13 @@ namespace Cashier_Dekstop_App
 
                     string ProID = txtbox_ProductID.Text;
                     string ProName = txtbox_ProductName.Text;
+                    string ProPrice = txtbox_ProductPrice.Text;
 
-                    string insertquery = "INSERT INTO TBL_Products(ProID,ProName) VALUES (@ProID,@ProName)";
+                    string insertquery = "INSERT INTO TBL_Products(ProID,ProName,ProPrice) VALUES (@ProID,@ProName,@ProPrice)";
                     SqlCommand cmd = new SqlCommand(insertquery, myconn);
                     cmd.Parameters.AddWithValue("@ProID", ProID);
                     cmd.Parameters.AddWithValue("@ProName", ProName);
+                    cmd.Parameters.AddWithValue("@ProPrice", ProPrice);
                     cmd.ExecuteNonQuery();
                     myconn.Close();
 
@@ -96,11 +98,13 @@ namespace Cashier_Dekstop_App
 
                     string ProID = txtbox_ProductID.Text;
                     string ProName = txtbox_ProductName.Text;
-                    string updateQuery = "UPDATE TBL_Products SET ProName=@ProName WHERE ProID=@ProID";
+                    string ProPrice = txtbox_ProductPrice.Text;
+                    string updateQuery = "UPDATE TBL_Products SET ProName=@ProName,ProPrice=@ProPrice WHERE ProID=@ProID";
 
                     SqlCommand cmd = new SqlCommand(updateQuery, myconn);
                     cmd.Parameters.AddWithValue("@ProID", ProID);
                     cmd.Parameters.AddWithValue("@ProName", ProName);
+                    cmd.Parameters.AddWithValue("@ProPrice", ProPrice);
                     cmd.ExecuteNonQuery();
                     myconn.Close();
 
@@ -140,12 +144,14 @@ namespace Cashier_Dekstop_App
             DataGridViewRow row = dataGridView1.Rows[i];
             txtbox_ProductID.Text = row.Cells[0].Value.ToString();
             txtbox_ProductName.Text = row.Cells[1].Value.ToString();
+            txtbox_ProductPrice.Text = row.Cells[2].Value.ToString();
         }
 
         private void cleartext()
         {
             txtbox_ProductID.Text = "";
             txtbox_ProductName.Text = "";
+            txtbox_ProductPrice.Text = "";
         }
 
         private void btn_Delete_Click_1(object sender, EventArgs e)

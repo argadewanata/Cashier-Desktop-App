@@ -83,6 +83,7 @@
             // 
             // txtbox_Discount
             // 
+            txtbox_Discount.AcceptsTab = true;
             txtbox_Discount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             txtbox_Discount.Location = new Point(112, 364);
             txtbox_Discount.Name = "txtbox_Discount";
@@ -226,7 +227,6 @@
             // 
             // txtbox_ProAmount
             // 
-            txtbox_ProAmount.AcceptsTab = true;
             txtbox_ProAmount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtbox_ProAmount.BorderStyle = BorderStyle.FixedSingle;
             txtbox_ProAmount.Location = new Point(336, 28);
@@ -237,11 +237,11 @@
             // 
             // txtBox_ProPrice
             // 
-            txtBox_ProPrice.AcceptsTab = true;
             txtBox_ProPrice.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txtBox_ProPrice.BorderStyle = BorderStyle.FixedSingle;
             txtBox_ProPrice.Location = new Point(126, 28);
             txtBox_ProPrice.Name = "txtBox_ProPrice";
+            txtBox_ProPrice.ReadOnly = true;
             txtBox_ProPrice.Size = new Size(100, 23);
             txtBox_ProPrice.TabIndex = 5;
             txtBox_ProPrice.Leave += txtBox_ProPrice_Leave;
@@ -254,6 +254,7 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(115, 23);
             comboBox1.TabIndex = 4;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // btn_Add
             // 
