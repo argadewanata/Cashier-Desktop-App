@@ -27,3 +27,4 @@ D:\OneDrive - Institut Teknologi Sepuluh Nopember\College Stuff\Semester 6\Pemro
 D:\OneDrive - Institut Teknologi Sepuluh Nopember\College Stuff\Semester 6\Pemrograman Berbasis Kerangka Kerja (Fajar Baskoro)\Code\Cashier-Dekstop-App\obj\Debug\net6.0-windows\Cashier_Dekstop_App.New_Bill.resources
 D:\OneDrive - Institut Teknologi Sepuluh Nopember\College Stuff\Semester 6\Pemrograman Berbasis Kerangka Kerja (Fajar Baskoro)\Code\Cashier-Dekstop-App\obj\Debug\net6.0-windows\Cashier_Dekstop_App.ViewBill.resources
 D:\OneDrive - Institut Teknologi Sepuluh Nopember\College Stuff\Semester 6\Pemrograman Berbasis Kerangka Kerja (Fajar Baskoro)\Code\Cashier-Dekstop-App\obj\Debug\net6.0-windows\Cashier_Dekstop_App.UpdateBill.resources
+D:\OneDrive - Institut Teknologi Sepuluh Nopember\College Stuff\Semester 6\Pemrograman Berbasis Kerangka Kerja (Fajar Baskoro)\Code\Cashier-Dekstop-App\obj\Debug\net6.0-windows\Cashier_Dekstop_App.PrintForm.resources

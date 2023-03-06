@@ -135,7 +135,17 @@ namespace Cashier_Dekstop_App
 
                 comboBox1.Select();
 
+                this.Hide();
+                PrintForm printform = new PrintForm();
+                printform.DataBillNo = BillNo.ToString();
+                printform.DataDate = BillDate.ToString();
+                printform.DataTotalBill = BillAmount.ToString();
+                printform.DataDiscount = DiscAmount.ToString();
+                printform.DataNetPay = NetPay.ToString();
+
+                printform.ShowDialog();
             }
+
         }
 
         public void loadBillNo()

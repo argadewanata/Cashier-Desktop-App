@@ -41,8 +41,8 @@ namespace Cashier_Dekstop_App
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            this.txtbox_Username.Text = "admin";
-            this.txtbox_Password.Text = "admin";
+            // this.txtbox_Username.Text = "admin";
+            // this.txtbox_Password.Text = "admin";
         }
     }
 }

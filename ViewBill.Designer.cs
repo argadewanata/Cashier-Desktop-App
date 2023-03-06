@@ -30,7 +30,6 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             dateTimePickerTo = new DateTimePicker();
-            btn_PrintSummary = new Button();
             lbl_FromDate = new Label();
             lbl_ToDate = new Label();
             dateTimePickerFrom = new DateTimePicker();
@@ -49,16 +48,15 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 8;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.5696354F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.1631117F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.5696354F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10.0376415F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.32246F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.214092F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.35317993F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 8.243243F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.0540543F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.864865F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.9459457F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.7567558F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.8211384F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
             tableLayoutPanel1.Controls.Add(dateTimePickerTo, 4, 0);
-            tableLayoutPanel1.Controls.Add(btn_PrintSummary, 0, 0);
             tableLayoutPanel1.Controls.Add(lbl_FromDate, 1, 0);
             tableLayoutPanel1.Controls.Add(lbl_ToDate, 3, 0);
             tableLayoutPanel1.Controls.Add(dateTimePickerFrom, 2, 0);
@@ -75,25 +73,16 @@
             // dateTimePickerTo
             // 
             dateTimePickerTo.Format = DateTimePickerFormat.Short;
-            dateTimePickerTo.Location = new Point(428, 3);
+            dateTimePickerTo.Location = new Point(251, 3);
             dateTimePickerTo.Name = "dateTimePickerTo";
             dateTimePickerTo.Size = new Size(137, 23);
             dateTimePickerTo.TabIndex = 1;
-            // 
-            // btn_PrintSummary
-            // 
-            btn_PrintSummary.Location = new Point(3, 3);
-            btn_PrintSummary.Name = "btn_PrintSummary";
-            btn_PrintSummary.Size = new Size(124, 23);
-            btn_PrintSummary.TabIndex = 0;
-            btn_PrintSummary.Text = "Print Summary";
-            btn_PrintSummary.UseVisualStyleBackColor = true;
             // 
             // lbl_FromDate
             // 
             lbl_FromDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lbl_FromDate.AutoSize = true;
-            lbl_FromDate.Location = new Point(158, 0);
+            lbl_FromDate.Location = new Point(23, 0);
             lbl_FromDate.Name = "lbl_FromDate";
             lbl_FromDate.Size = new Size(35, 29);
             lbl_FromDate.TabIndex = 1;
@@ -104,7 +93,7 @@
             // 
             lbl_ToDate.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             lbl_ToDate.AutoSize = true;
-            lbl_ToDate.Location = new Point(378, 0);
+            lbl_ToDate.Location = new Point(220, 0);
             lbl_ToDate.Name = "lbl_ToDate";
             lbl_ToDate.Size = new Size(19, 29);
             lbl_ToDate.TabIndex = 2;
@@ -114,16 +103,16 @@
             // dateTimePickerFrom
             // 
             dateTimePickerFrom.Format = DateTimePickerFormat.Short;
-            dateTimePickerFrom.Location = new Point(216, 3);
+            dateTimePickerFrom.Location = new Point(74, 3);
             dateTimePickerFrom.Name = "dateTimePickerFrom";
             dateTimePickerFrom.Size = new Size(132, 23);
             dateTimePickerFrom.TabIndex = 3;
             // 
             // bnt_DeleteBills
             // 
-            bnt_DeleteBills.Location = new Point(741, 3);
+            bnt_DeleteBills.Location = new Point(743, 3);
             bnt_DeleteBills.Name = "bnt_DeleteBills";
-            bnt_DeleteBills.Size = new Size(53, 23);
+            bnt_DeleteBills.Size = new Size(51, 23);
             bnt_DeleteBills.TabIndex = 5;
             bnt_DeleteBills.Text = "Delete Bills";
             bnt_DeleteBills.UseVisualStyleBackColor = true;
@@ -131,15 +120,16 @@
             // 
             // txtbox_Flag
             // 
-            txtbox_Flag.Location = new Point(571, 3);
+            txtbox_Flag.Location = new Point(406, 3);
             txtbox_Flag.Name = "txtbox_Flag";
-            txtbox_Flag.Size = new Size(60, 23);
+            txtbox_Flag.Size = new Size(229, 23);
             txtbox_Flag.TabIndex = 6;
+            txtbox_Flag.Visible = false;
             txtbox_Flag.TextChanged += textBox1_TextChanged;
             // 
             // btn_ViewBills
             // 
-            btn_ViewBills.Location = new Point(639, 3);
+            btn_ViewBills.Location = new Point(641, 3);
             btn_ViewBills.Name = "btn_ViewBills";
             btn_ViewBills.Size = new Size(96, 23);
             btn_ViewBills.TabIndex = 4;
@@ -220,7 +210,6 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Button btn_PrintSummary;
         private DateTimePicker dateTimePickerTo;
         private Label lbl_ToDate;
         private DateTimePicker dateTimePickerFrom;

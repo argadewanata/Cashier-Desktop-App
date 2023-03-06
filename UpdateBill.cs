@@ -294,6 +294,16 @@ namespace Cashier_Dekstop_App
 
                 cmd.ExecuteNonQuery();
                 myconn.Close();
+
+                this.Hide();
+                PrintForm printform = new PrintForm();
+                printform.DataBillNo = BillNo.ToString();
+                printform.DataDate = BillDate.ToString();
+                printform.DataTotalBill = BillAmount.ToString();
+                printform.DataDiscount = DiscAmount.ToString();
+                printform.DataNetPay = NetPay.ToString();
+
+                printform.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -305,8 +315,6 @@ namespace Cashier_Dekstop_App
             clearPayBox();
             CalcAmount();
             calcDisc();
-            this.Hide();
-
         }
 
         private void clearPayBox()
