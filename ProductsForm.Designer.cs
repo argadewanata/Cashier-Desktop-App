@@ -35,6 +35,7 @@
             btn_Save = new Button();
             btn_Update = new Button();
             dataGridView1 = new DataGridView();
+            btn_Delete = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             // 
             // btn_Save
             // 
-            btn_Save.Location = new Point(204, 115);
+            btn_Save.Location = new Point(152, 97);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(75, 23);
             btn_Save.TabIndex = 4;
@@ -85,7 +86,7 @@
             // 
             // btn_Update
             // 
-            btn_Update.Location = new Point(308, 115);
+            btn_Update.Location = new Point(242, 97);
             btn_Update.Name = "btn_Update";
             btn_Update.Size = new Size(75, 23);
             btn_Update.TabIndex = 5;
@@ -98,18 +99,31 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(2, 153);
+            dataGridView1.Location = new Point(2, 140);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(553, 219);
+            dataGridView1.Size = new Size(553, 232);
             dataGridView1.TabIndex = 6;
+            dataGridView1.CellContentDoubleClick += dataGridView1_CellContentDoubleClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            // 
+            // btn_Delete
+            // 
+            btn_Delete.Location = new Point(333, 97);
+            btn_Delete.Name = "btn_Delete";
+            btn_Delete.Size = new Size(106, 23);
+            btn_Delete.TabIndex = 8;
+            btn_Delete.Text = "Delete Product";
+            btn_Delete.UseVisualStyleBackColor = true;
+            btn_Delete.Click += btn_Delete_Click_1;
             // 
             // ProductsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(558, 376);
+            Controls.Add(btn_Delete);
             Controls.Add(dataGridView1);
             Controls.Add(btn_Update);
             Controls.Add(btn_Save);
@@ -118,6 +132,7 @@
             Controls.Add(lbl_ProductName);
             Controls.Add(lbl_ProductID);
             Name = "ProductsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Products Form";
             Load += ProductsForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -134,5 +149,6 @@
         private Button btn_Save;
         private Button btn_Update;
         private DataGridView dataGridView1;
+        private Button btn_Delete;
     }
 }

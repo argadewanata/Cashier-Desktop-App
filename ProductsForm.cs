@@ -68,9 +68,10 @@ namespace Cashier_Dekstop_App
                     cmd.ExecuteNonQuery();
                     myconn.Close();
 
-                    MessageBox.Show("New Product Saved...");
+                    MessageBox.Show("New Product Saved");
                     // Fill the data grid again
                     fillGrid();
+                    cleartext();
                 }
 
             }
@@ -82,19 +83,103 @@ namespace Cashier_Dekstop_App
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
-        }
+            if (txtbox_ProductID.Text == "")
+            {
+                MessageBox.Show("Please select product to update");
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection myconn = sql_Connection.GetConn();
+                    myconn.Open();
 
+                    string ProID = txtbox_ProductID.Text;
+                    string ProName = txtbox_ProductName.Text;
+                    string updateQuery = "UPDATE TBL_Products SET ProName=@ProName WHERE ProID=@ProID";
+
+                    SqlCommand cmd = new SqlCommand(updateQuery, myconn);
+                    cmd.Parameters.AddWithValue("@ProID", ProID);
+                    cmd.Parameters.AddWithValue("@ProName", ProName);
+                    cmd.ExecuteNonQuery();
+                    myconn.Close();
+
+                    MessageBox.Show("Product Updated");
+                    fillGrid();
+                    cleartext();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
         public void fillGrid()
         {
             // FIll the data gridview from Database
             SqlConnection myconn = sql_Connection.GetConn();
             myconn.Open();
-            da = new SqlDataAdapter("select * from TBL_Products order by ProID asc", myconn);
+            da = new SqlDataAdapter("SELECT * FROM TBL_Products ORDER BY ProID ASC", myconn);
             myconn.Close();
             SqlCommandBuilder cd = new SqlCommandBuilder(da);
             dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        int i;
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            i = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[i];
+            txtbox_ProductID.Text = row.Cells[0].Value.ToString();
+            txtbox_ProductName.Text = row.Cells[1].Value.ToString();
+        }
+
+        private void cleartext()
+        {
+            txtbox_ProductID.Text = "";
+            txtbox_ProductName.Text = "";
+        }
+
+        private void btn_Delete_Click_1(object sender, EventArgs e)
+        {
+            if (txtbox_ProductID.Text == "")
+            {
+                MessageBox.Show("Please select product to delete with double click");
+            }
+            else
+            {
+                try
+                {
+                    SqlConnection myconn = sql_Connection.GetConn();
+                    myconn.Open();
+
+                    string ProID = txtbox_ProductID.Text;
+                    string ProName = txtbox_ProductName.Text;
+                    string deleteQuery = "DELETE FROM TBL_Products WHERE ProID=@ProID";
+
+                    SqlCommand cmd = new SqlCommand(deleteQuery, myconn);
+                    cmd.Parameters.AddWithValue("@ProID", ProID);
+                    cmd.ExecuteNonQuery();
+                    myconn.Close();
+
+                    MessageBox.Show("Product Deleted");
+                    fillGrid();
+                    cleartext();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+            }
         }
     }
 }
