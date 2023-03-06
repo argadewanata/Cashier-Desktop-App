@@ -70,6 +70,7 @@
             btn_Save.TabIndex = 23;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = true;
+            btn_Save.Click += btn_Save_Click;
             // 
             // txtbox_NetPay
             // 
@@ -87,6 +88,7 @@
             txtbox_Discount.Name = "txtbox_Discount";
             txtbox_Discount.Size = new Size(100, 23);
             txtbox_Discount.TabIndex = 21;
+            txtbox_Discount.Leave += txtbox_Discount_Leave;
             // 
             // txtbox_TotalBill
             // 
@@ -96,6 +98,7 @@
             txtbox_TotalBill.ReadOnly = true;
             txtbox_TotalBill.Size = new Size(100, 23);
             txtbox_TotalBill.TabIndex = 20;
+            txtbox_TotalBill.TextChanged += txtbox_TotalBill_TextChanged;
             // 
             // lbl_NetPay
             // 
@@ -140,6 +143,8 @@
             dataGridView1.Size = new Size(679, 228);
             dataGridView1.TabIndex = 16;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellDoubleClick += dataGridView1_CellDoubleClick;
+            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             // 
             // tableLayoutPanel1
             // 
@@ -217,6 +222,7 @@
             txtbox_ProQty.Name = "txtbox_ProQty";
             txtbox_ProQty.Size = new Size(82, 23);
             txtbox_ProQty.TabIndex = 7;
+            txtbox_ProQty.Leave += txtbox_ProQty_Leave;
             // 
             // txtbox_ProAmount
             // 
@@ -238,6 +244,7 @@
             txtBox_ProPrice.Name = "txtBox_ProPrice";
             txtBox_ProPrice.Size = new Size(100, 23);
             txtBox_ProPrice.TabIndex = 5;
+            txtBox_ProPrice.Leave += txtBox_ProPrice_Leave;
             // 
             // comboBox1
             // 
@@ -257,6 +264,7 @@
             btn_Add.TabIndex = 8;
             btn_Add.Text = "Add";
             btn_Add.UseVisualStyleBackColor = true;
+            btn_Add.Click += btn_Add_Click;
             // 
             // btn_Delete
             // 
@@ -267,6 +275,7 @@
             btn_Delete.TabIndex = 9;
             btn_Delete.Text = "Delete";
             btn_Delete.UseVisualStyleBackColor = true;
+            btn_Delete.Click += btn_Delete_Click;
             // 
             // bnt_Clear
             // 
@@ -384,6 +393,7 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(panel1);
             Name = "UpdateBill";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UpdateBill";
             Load += UpdateBill_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -122,8 +122,6 @@ namespace Cashier_Dekstop_App
                     cmd_row.Parameters.AddWithValue("@BillNO", BillNO);
                     cmd_row.Parameters.AddWithValue("@Date", Date);
 
-                    //SqlCommand cmd1 = new SqlCommand("INSERT INTO TBL_RowData(SINo,ProductName,Price,Qty,Amount,BillNo) VALUES('"+dataGridView1.Rows[i].Cells[0].ToString()+ "','"+dataGridView1.Rows[i].Cells[1].ToString()+ "','"+dataGridView1.Rows[i].Cells[2].ToString()+ "','"+dataGridView1.Rows[i].Cells[3].ToString()+ "','"+dataGridView1.Rows[i].Cells[4].ToString()+ "','"+dataGridView1.Rows[i].Cells[5].Value.ToString()+"')", myconn);
-
                     cmd_row.ExecuteNonQuery();
                 }
                 dataGridView1.Rows.Clear();
