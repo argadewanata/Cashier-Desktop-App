@@ -64,7 +64,8 @@
             txtbox_ProductID.Location = new Point(232, 23);
             txtbox_ProductID.Name = "txtbox_ProductID";
             txtbox_ProductID.Size = new Size(126, 23);
-            txtbox_ProductID.TabIndex = 7;
+            txtbox_ProductID.TabIndex = 9;
+            txtbox_ProductID.TextChanged += txtbox_ProductID_TextChanged;
             // 
             // txtbox_ProductName
             // 

@@ -181,5 +181,10 @@ namespace Cashier_Dekstop_App
                 }
             }
         }
+
+        private void txtbox_ProductID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

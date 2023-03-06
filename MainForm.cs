@@ -17,11 +17,23 @@ namespace Cashier_Dekstop_App
             InitializeComponent();
         }
 
-        private void productsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void productsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             ProductsForm p = new ProductsForm();
             p.MdiParent = this;
             p.Show();
+        }
+
+        private void newBillToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            New_Bill nb = new New_Bill();
+            nb.MdiParent = this;
+            nb.Show();
         }
     }
 }
